@@ -7,9 +7,13 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
-# tg settings
-TELEGRAM_TOKEN = "7468556743:AAGAl3nd9Gp6XJsuHMr56tAz3xJtNwPGrLU"
-TELEGRAM_CHAT_ID = "6795755265"
+from dotenv import load_dotenv
+
+load_dotenv()
+
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+
 
 def send_telegram_photo(photo_path, caption=""):
     try:
